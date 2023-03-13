@@ -17,19 +17,17 @@ Note that both input and output should use upper case for characters A, B, C, D,
 ```
 brightest(["#001000", "#000000"]) == "#001000"
 brightest(["#ABCDEF", "#123456"]) == "#ABCDEF"
-
 ```
 
 If there are multiple brightest colors, return the first one:
 
 ```
 brightest(["#00FF00", "#FFFF00", "#01130F"]) == "#00FF00"
-
 ```
 
 ## Solution:
 
-##### Алгоритм выполнения
+#### Алгоритм выполнения
 
 - Пройти по всем цветам в списке.
 - Для каждого цвета преобразовать его из 6-значного шестнадцатеричного представления в RGB значения R, G, B.
@@ -54,10 +52,10 @@ colors.forEach((color)=>{
     arrayMax.push(v)
 })
 
-//найдем максимальную яркость
+//найдем максимальную яркость из данных цветов
 let maxV = Math.max(...arrayMax)
 
-// находим по индексу число с наибольшим V и возвращаем из другого массива число с таким же индексом
+// находим по индексу число с наибольшим V и возвращаем из массива данных число с таким же индексом
 for(let i = 0; i < arrayMax.length; i++){
         if (arrayMax[i] === maxV) {
         return colors[i]
