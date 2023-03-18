@@ -28,4 +28,10 @@ function isIsogram(str) {
     return setStr.size === str.length;
   }
 }
+
+
+//2 способ проверки повторяющейся буквы в оставшейся части слова
+if (str.indexOf(str[i], i + 1) !== -1) {
+      return false;
+    }
 ```
