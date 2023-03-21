@@ -33,54 +33,47 @@ output = [
 
 #### Алгоритм выполнения
 
-- создадим объект с корзинами - в который будем сортировать(4 ключа и пустые массивы);
-- пробежимся по массиву с объектами методом forEach
-- на каждом цикле сделаем деструктуризацию объекта на переменные type, material, secondMaterial
-- напишем 4 условия для сортировки - и добавления type в определенный массив(корзину) по значению material и secondMaterial;
-- создадим пустой массив, в  который поместим все значения из объекта(корзины)методом forEach и получим массив с подмассивами.
-
+- создадим массив с корзинами(подмассивами) - в которые будем сортировать(4 подмассива - paper, glass,organic , plastic);
+- пробежимся по входному массиву с объектами циклом for и на каждой  итерации для обьекта создадим условие;
+- условие по значению двух св-в  -  material и secondMaterial;
+- в зависимости от значения этих св-в будем добавлять type каждого объекта в определенный из 4х подмассивов;
 
 
 ## Solution:
 
 ```javascript
 function recycle(array) {
-  const result = [];
-  const bins = {
-    paper: [],
-    glass: [],
-    organic: [],
-    plastic: [],
-  };
-
-  array.forEach((item) => {
-    const { type, material, secondMaterial } = item;
-    if (material === 'paper') {
-      bins.paper.push(type);
-      if (secondMaterial === 'paper') {
-        bins.paper.push(type);
-      }
-    } else if (material === 'glass') {
-      bins.glass.push(type);
-      if (secondMaterial === 'paper') {
-        bins.paper.push(type);
-      } else if (secondMaterial === 'glass') {
-        bins.glass.push(type);
-      }
-    } else if (material === 'organic') {
-      bins.organic.push(type);
-      if (secondMaterial === 'plastic') {
-        bins.plastic.push(type);
-      }
-    } else if (material === 'plastic') {
-      bins.plastic.push(type);
-      if (secondMaterial === 'organic') {
-        bins.organic.push(type);
+   let bins = [
+    [], // paper
+    [], // glass
+    [], // organic
+    []  // plastic
+  ];
+  
+  for (let item of array) {
+    if (item.material === "paper") {
+      bins[0].push(item.type);
+    } else if (item.material === "glass") {
+      bins[1].push(item.type);
+    } else if (item.material === "organic") {
+      bins[2].push(item.type);
+    } else if (item.material === "plastic") {
+      bins[3].push(item.type);
+    }
+    
+    if (item.secondMaterial) {
+      if (item.secondMaterial === "paper") {
+        bins[0].push(item.type);
+      } else if (item.secondMaterial === "glass") {
+        bins[1].push(item.type);
+      } else if (item.secondMaterial === "organic") {
+        bins[2].push(item.type);
+      } else if (item.secondMaterial === "plastic") {
+        bins[3].push(item.type);
       }
     }
-  });
-
-  Object.values(bins).forEach((bin) => result.push(bin));
-  return result;
+  }
+  
+  return bins;
 }
 ```
