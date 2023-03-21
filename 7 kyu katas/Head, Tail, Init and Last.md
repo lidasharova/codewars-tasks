@@ -37,7 +37,7 @@ tail([1,2,3,4,5]); => [2,3,4,5]
 Most tests consist of 100 randomly generated arrays, each with four tests, one for each operation. There are 400 tests overall. No empty arrays will be given. Haskell has QuickCheck tests
 
 
-##### Алгоритм
+### Алгоритм
 Нам нужно написать 4 независимые ф-ции, которые НЕ изменяют входной массив.
 
 В функциях используем метод slice, чтобы создать новый массив с нужными элементами,
