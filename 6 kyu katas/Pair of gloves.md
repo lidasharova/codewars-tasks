@@ -26,6 +26,7 @@ result = 3 (3 red pairs)
 
 ## Solution:
 
+
 ```javascript
 function numberOfPairs(gloves) {
   // создаем объект для хранения количества перчаток каждого цвета
@@ -45,8 +46,7 @@ let pairsCount = 0;
   // считаем количество пар перчаток каждого цвета
 
   for (let color in colorCounts) {
-    const colorPairs = Math.floor(colorCounts[color] / 2);
-    pairsCount += colorPairs;
+     pairsCount += Math.floor(colorCounts[color] / 2);
   }
 
   return pairsCount;

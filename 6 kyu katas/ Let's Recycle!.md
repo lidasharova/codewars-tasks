@@ -49,7 +49,7 @@ function recycle(array) {
     [], // organic
     []  // plastic
   ];
-  
+
   for (let item of array) {
     if (item.material === "paper") {
       bins[0].push(item.type);
@@ -60,7 +60,8 @@ function recycle(array) {
     } else if (item.material === "plastic") {
       bins[3].push(item.type);
     }
-    
+
+
     if (item.secondMaterial) {
       if (item.secondMaterial === "paper") {
         bins[0].push(item.type);
@@ -73,7 +74,7 @@ function recycle(array) {
       }
     }
   }
-  
+
   return bins;
 }
 ```
