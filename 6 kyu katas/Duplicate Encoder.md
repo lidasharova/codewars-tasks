@@ -11,8 +11,6 @@ The goal of this exercise is to convert a string to a new string where each char
 "(( @"     =>  "))(("
 ```
 
-
-## Solution:
 #### Алгоритм выполнения
 
 - переведем входную строку в один регистр;
@@ -21,6 +19,9 @@ The goal of this exercise is to convert a string to a new string where each char
 - если результаты вызова методов indexOf() и lastIndexOf() равны, то это означает, что в строке или массиве искомый элемент существует в одном месте(не повторяется)
 - исходя их этого условия, мы будем добавлять в пустую строку соответствующее значение ')' или '('
 
+
+
+## Solution:
 ```javascript
 function duplicateEncode(word) {
   let str = '';
