@@ -24,10 +24,29 @@ runLengthEncoding("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbb")
 
 #### Алгоритм выполнения
 
+- нужно пройтись по строке и подсчитать количество подряд идущих символов.
+- Как только мы обнаруживаем различие между текущим и предыдущим символами, мы добавляем в результирующий массив пару чисел и символов (количество подряд идущих символов и сам символ), и сбрасываем счетчик count в единицу.
+
+- условие if (i === str.length || str[i] !== str[i - 1]) позволяет корректно обрабатывать последний символ строки и избежать возможной ошибки выхода за пределы массива.
 
 
 ## Solution:
 
 ```javascript
+var runLengthEncoding = function(str){
+  const result = [];
+  let count = 1;
+
+  for (let i = 1; i <= str.length; i++) {
+    if (i === str.length || str[i] !== str[i - 1]) {
+      result.push([count, str[i - 1]]);
+      count = 1;
+    } else {
+      count++;
+    }
+  }
+
+  return result;
+}
 
 ```

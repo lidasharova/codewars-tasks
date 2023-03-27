@@ -44,7 +44,6 @@ Most tests consist of 100 randomly generated arrays, each with four tests, one f
 и метод length, чтобы получить индекс последнего элемента массива.
 
 
-
 ## Solution:
 
 ```javascript
