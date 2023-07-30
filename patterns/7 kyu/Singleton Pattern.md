@@ -17,13 +17,21 @@ obj2.test; // => 1
 
 ```
 
-#### Алгоритм выполнения
-
-
-
 ## Solution:
 
 ```javascript
 
+var Singleton = (() => {
+  let object= null;
+
+  return class Singleton  {
+    constructor() {
+      if(object === null) {
+        object = this;
+      }
+      return object;
+    }
+  }
+})();
 
 ```
