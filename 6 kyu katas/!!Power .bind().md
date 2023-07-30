@@ -28,7 +28,7 @@ Your task is override the native Function.prototype.bind method by a new one tha
 
 - Если при вызове новой функции с помощью rebind() передан новый контекст, он должен быть добавлен в массив привязанных контекстов.
 
-- Переопределите Function.prototype.bind на созданную rebind() функцию
+- Переопределить Function.prototype.bind на созданную rebind() функцию
 
 https://stackoverflow.com/questions/75743566/power-bind-codewars-task
 
